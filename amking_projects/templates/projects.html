@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<!-- ======= Header =======
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+
+
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="/">Home</a></li>
+        <li><a class="nav-link scrollto" href="/about_us">About</a></li>
+        <li><a class="nav-link scrollto" href="/projects">Projects</a></li>
+        <li><a class="nav-link scrollto " href="/gallery">Gallery</a></li>
+        <li><a class="nav-link scrollto" href="/testimonials">Testimonials</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav> .navbar 
+
+    <a href="#about" class="get-started-btn scrollto">Get Started</a>
+
+  </div>
+</header>End Header -->
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top"  style="background:linear-gradient(to bottom,rgba(0,0,0,1),transparent);">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+
+    <h1 class="logo me-auto me-lg-0"><a href="/"><img src={% static "img/icons/amking_logo1.png" %} style="padding:3%;"></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="/">Home</a></li>
+        <li><a class="nav-link scrollto" href="/about_us">About</a></li>
+        <li><a class="nav-link scrollto" href="/services">Services</a></li>
+        <li><a class="nav-link scrollto" href="/projects">Projects</a></li>
+        <li><a class="nav-link scrollto " href="/gallery">Gallery</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <a href="tel:+919630030053" class="get-started-btn scrollto">Call us</a>
+
+  </div>
+</header><!-- End Header -->
+<main id="main" style="padding:3%;background-image: url({% static 'img/bg5.jpg' %}); background-size:100vw 100%; background-position:fixed;">
+    
+  <!-- ======= Testimonials Section ======= -->
+  <section id="about" class="about" style="padding:3%;margin-top:5%;background:transparent;">
+      <div class="section-title" style="margin-left:1%">
+          <h2>Our</h2>
+          <p>Projects</p>
+      </div>
+    </secttion>
+      <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+          {% for proj in projects %}
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box"  style="border-radius: 10px 50px 10px 50px;width:100%;">
+                {% if proj.img1 %}
+                <div class="img"><a href="/project_detail/{{ proj.title }}"><img src="/media/{{ proj.img1 }}" width="100%" height="200px" style="margin-bottom:6%;border-radius:0px 40px 0 40px;"></a></div>
+                {% endif %}
+                <h4><a href="/project_detail/{{ proj.title }}">{{ proj.title }}</a></h4>
+                <!--<p style="text-align:center">KANTHALLOOR, Near Mirth</p><br>-->
+                <p style="text-align:justify">{{ proj.short_description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+            <!--<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box"  style="border-radius: 10px 50px 10px 50px;width:100%;">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <h4><a href="">THE SIGNATURE</a></h4>
+                <p style="text-align:center">KANTHALLOOR, Near Mirth</p><br>
+                <p style="text-align:justify">A project in the most prestigious location with an unlimited viewW</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">CITY SCAPES</a></h4>
+                <p style="text-align:center">KANTHALLOOR, Main Junction</p><br>
+                <p style="text-align:justify">A heart of the town project.</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4><a href="">THE PATHLESS</a></h4>
+                <p style="text-align:center">KANTHALLOOR</p><br>
+                <p style="text-align:justify">A pure off-road project.</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box"   style="border-radius: 10px 50px 10px 50px;width:100%;">
+                <div class="icon"><i class="bx bx-world"></i></div>
+                <h4><a href="">WATERSEDGE</a></h4>
+                <p style="text-align:center">KANTHALLOOR, Vettukad Bridge</p><br>
+                <p style="text-align:justify">A premium homestay.</p>
+              </div>
+            </div>
+          </div>-->
+  
+        </div>
+      </section><!-- End Services Section -->
+  
+
+    </div>
+  </section><!-- End hero2 -->
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact" style="border-radius:50px 0 50px 0;">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Contact</h2>
+            <p>Contact Us</p>
+          </div>
+  
+          <div class="row mt-5">
+  
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Head Office:</h4>
+                  <p>Amking Developers pvt ltd, Rainbow Shopping Complex, Thiruvananthapuram
+                    KL 695036 IN
+                  </p>
+                </div>
+  
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p><a href="mailto:info@amking.in" style="text-decoration:none;font-size:1.2em">info@amking.in</a></p>
+                </div>
+  
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p><a href="tel:9630030053" style="text-decoration:none;font-size:1.2em">+91 9630030053</a></p>
+
+                  <p><a href="tel:9689001000" style="text-decoration:none;font-size:1em">+91 9689001000</a></p>
+                </div>
+  
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-8 mt-5 mt-lg-0">
+  
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="lname" id="name" placeholder="Last Name" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="phone" class="form-control" id="name" placeholder="Mobile" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Submit</button></div>
+              </form>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+
+{% endblock %}

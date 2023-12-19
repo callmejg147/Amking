@@ -1,0 +1,671 @@
+{% load static %}
+<! DOCTYPE html >
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AMKING | Builders & Developers</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="{% static 'media/icons/amking_logo_test.png' %}" rel="icon">
+  <link href='{% static "media/icons/amking_logo_test.png" %}' rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href='{% static "vendor/aos/aos.css" %}' rel="stylesheet">
+  <link href='{% static "vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+  <link href='{% static "vendor/bootstrap-icons/bootstrap-icons.css" %}' rel="stylesheet">
+  <link href='{% static "vendor/boxicons/css/boxicons.min.css" %}' rel="stylesheet">
+  <link href='{% static "vendor/glightbox/css/glightbox.min.css" %}' rel="stylesheet">
+  <link href='{% static "vendor/remixicon/remixicon.css" %}' rel="stylesheet">
+  <link href='{% static "vendor/swiper/swiper-bundle.min.css" %}' rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html"><img src={% static "img/icons/amking_logo1.png" %} ></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/about_us">About</a></li>
+          <li><a class="nav-link scrollto" href="/services">Services</a></li>
+          <li><a class="nav-link scrollto" href="/projects">Projects</a></li>
+          <li><a class="nav-link scrollto " href="/gallery">Gallery</a></li>
+
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="tel:+919630030053" class="get-started-btn scrollto">Call us</a>
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1 style="font-family: 'Ephesis', cursive; font-size:60pt; line-spacing:100pt; text-shadow: 2px 2px 2px black; line-height:0.8em;">Dreams are meant to come true. We’ll make it happen for<span style="font-size:80pt"> you.</span></h1>
+          <br>
+          <h2 style="margin-top:10%">We are a team of talented builders</h2>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about" style="padding-bottom:0;background:linear-gradient(to bottom,#fffff0,white);">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" align="center">
+          <div class="col-lg-12 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src={% static "img/icons/amking_logo1.png" %} class="img-fluid" alt="" style="border-radius: 10px 50px 10px 50px;">
+          </div>
+        </div>
+        <div class="row" style="margin-top:3em;">
+          <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+
+            <p class="fst-italic" style="padding:0 5em 0 5em">
+              Welcome to <b>AMKING</b>, where innovation meets craftsmanship in the world of builders and developers. As a leading force in the industry, we take pride in shaping spaces that transcend expectations and redefine living and working environments.<b>AMKING DEVELOPERS PRIVATE LIMITED</b> is a Private company incorporated with MCA on 24th April, 2023. We are listed in the class of Private company and classified as Non-govt company.
+
+            </p>
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients" style="height:150px;padding-top:60px;">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center"">
+          {% for proj in projects %}
+            <div class="swiper-slide"><p><b>{{ proj.title }}</b></p></div>
+          {% endfor %}
+            <!--<div class="swiper-slide"><p style="white-space:nowrap;"><b>THE SIGNATURE</b></p></div>
+            <div class="swiper-slide"><p style="white-space:nowrap;"><b>WATERSEDGE</b></p></div>
+            <div class="swiper-slide"><p style="white-space:nowrap;"><b>THE PATHLESS</b></p></div>
+            <div class="swiper-slide"><p style="white-space:nowrap;"><b>CITY SCAPES</b></p></div>-->
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features" style="background:linear-gradient(to top,#fffff0,white);">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="image col-lg-6" style='background-image: url("{% static '/img/img3.jpg' %}");border-radius: 50px 10px 50px 10px;' data-aos="fade-right"></div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+            <h2 style="margin:1em 0 2em 0.5em;">Some of our services include:</h2>
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-receipt"></i>
+              <h4>Real Estate Developers</h4>
+              <p>We engage in business of developing real estate for sale by erecting buildings and other structures along with the sub-division of lands into plots.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-images"></i>
+              <h4>Property Dealers</h4>
+              <p>Responsible for getting a deal finalized or negotiating for the sale, purchase, exchange, letting or taking on lease of or any other dealing with, the buyer and seller, lessor and lessee, landlord and tenant, in respect of any immovable property and gets commission as remuneration and includes a property consultant and estate agent.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-shield"></i>
+              <h4>Residential Construction Service</h4>
+              <p>Residential construction services specialize in creating spaces for people to live in. Whether it's a single-family home, a duplex, or a high-rise apartment building, residential construction services work to build comfortable, safe, and durable homes.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Some of our</h2>
+          <p>Projects:</p>
+        </div>
+
+        <div class="row">
+          {% for proj in projects|slice:":3" %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+              {% if proj.img1 %}
+                <div class="img"><a href="/project_detail/{{ proj.title }}"><img src="/media/{{ proj.img1 }}" width="100%" height="200px" style="margin-bottom:6%;border-radius:0px 40px 0 40px;"></a></div>
+              {% endif %}
+              <h4><a href="/project_detail/{{ proj.title }}">{{ proj.title }}</a></h4>
+              <p>{{ proj.short_description }}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+          <!--<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4><a href="">WATERSEDGE</a></h4>
+              <p>KANTHALLOOR, Vettukad Bridge</p><br>
+              <p>A premium homestay.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">THE SIGNATURE</a></h4>
+              <p>KANTHALLOOR, Near Mirth</p><br>
+
+              <p>A project in the most prestigious location with an unlimited view</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">CITY SCAPES</a></h4>
+              <p>KANTHALLOOR, Main Junction</p><br>
+              <p>A heart of the town project.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box" style="border-radius: 10px 50px 10px 50px;width:100%;">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">THE PATHLESS</a></h4>
+              <p>KANTHALLOOR</p><br>
+              <p>A pure off-road project.</p>
+            </div>
+          </div>-->
+
+
+
+        </div>
+
+      </div>
+
+      <div class="text-center" style="margin-top:2em;"><a href="projects/" style="background:#ffc451;border:1px solid #ffc451;border-radius:50px;padding:1% 3% 1% 3%;">View All</a></div>
+
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>Call To Action</h3>
+          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a class="cta-btn" href="#">Call To Action</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- gallery Section -->
+    <section id="portfolio" class="portfolio" style="padding-top:6%;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Our</h2>
+          <p>Gallery</p>
+        </div>
+
+        <!--<div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">Projects</li>-->
+              <!--<li data-filter=".filter-card">Experiences</li>
+              <li data-filter=".filter-web">Floor Plan</li>
+            </ul>
+          </div>
+        </div>-->
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        {% for img in gallery|slice:":6" %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="/media/{{ img.image }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ img.title }}</h4>
+                <p>{{ img.short_description }}</p>
+                <div class="portfolio-links">
+                  <a href="/media/{{ img.image }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ img.title }}"><i class="bx bx-plus"></i></a>
+                  <a href="" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+
+        </div>
+
+      </div>
+
+      <div class="text-center" style="margin-top:2em;"><a id="gal-btn" href="gallery/" style="background:#fffff0;border:1px solid #ffc451;border-radius:50px;padding:1% 3% 1% 3%;">View All</a></div>
+
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
+          <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3>Our Success</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              </p>
+              {% for item in success%}
+              <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-emoji-smile"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ item.clients }}" data-purecounter-duration="2" class="purecounter"></span>
+                    <p><strong>Happy Clients</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-journal-richtext"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ item.projects }}" data-purecounter-duration="2" class="purecounter"></span>
+                    <p><strong>Projects</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-clock"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ item.years }}" data-purecounter-duration="4" class="purecounter"></span>
+                    <p><strong>Years of experience</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-award"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ item.awards }}" data-purecounter-duration="4" class="purecounter"></span>
+                    <p><strong>Awards</strong></p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials" style="height:500px">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static "img/testimonials/testimonials-1.jpg" %} class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static "img/testimonials/testimonials-2.jpg" %} class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static "img/testimonials/testimonials-3.jpg" %} class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static "img/testimonials/testimonials-4.jpg" %} class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static "img/testimonials/testimonials-5.jpg" %} class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <!--<section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Check out our Team</p>
+        </div>
+
+        <div class="row">
+          {% for team in obj %}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src='{% static "/img/team/team-1.jpg" %}' class="img-fluid" alt="">
+                <div class="social">
+                  <a href={{ team.X }} target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href={{ team.facebook }} target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href={{ team.instagram }} target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href={{ team.linkedin }} target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{ team.name }}</h4>
+                <span>{{ team.position }}</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Name 2</h4>
+                <span>Position 2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Name 3</h4>
+                <span>Position 3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Name 4</h4>
+                <span>Position 4</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>-->
+    <!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Head Office:</h4>
+                <p>Amking Developers pvt ltd, Rainbow Shopping Complex, Thiruvananthapuram
+                  KL 695036 IN
+                </p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p><a href="mailto:info@amking.in" style="text-decoration:none;font-size:1.2em">info@amking.in</a></p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p><a href="tel:9630030053" style="text-decoration:none;font-size:1.2em">+91 9630030053</a></p>
+                <p><a href="tel:9689001000" style="text-decoration:none;font-size:1em">+91 9689001000</a></p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="/" method="POST" role="form" class="php-email-form" name="enquiryForm">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="fname" class="fname form-control" id="name" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="lname form-control" name="lname" id="lname" placeholder="Last Name" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="phone" class="phn form-control" id="phone" placeholder="Mobile" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="em form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="sub form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="msg form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="button" onclick="sendwhatsapp();" style="background:#ffc451;border:1px solid #ffc451;border-radius:50px;padding:1% 3% 1% 3%;">Submit</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+<footer id="footer" style="padding-bottom:0;">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6" style="margin-right:30%">
+            <div class="footer-info">
+              <img src={% static 'img/icons/amking_logo1.png' %} width=50% style="padding:3%">
+
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links" style="display:flex;flex-wrap:wrap;">
+            <ul style="display:block;">
+              <li><i class="bx bx-chevron-right"></i> <a href="/" style="color:white;">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about_us" style="color:white;"><span>About us</span></a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services" style="color:white;">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/projects" style="color:white;">Projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/gallery" style="color:white;">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="container" style="display:block">
+            <div class="copyright" style="text-align:left;white-space:nowrap;">
+              &copy; Copyright <strong><span> <a style="text-decoration:none;color:whitesmoke;" href="/" target="_blank">Amking</a></span></strong>. All Rights Reserved
+            </div>
+            <div class="credits" style="text-align:right">
+              Designed by <a href="https://www.inspirezesttechnologies.com/" target="_blank" style="text-decoration:none"><img src={% static "img/icons/IZ_logo.png" %} width="23%"></a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={% static "vendor/purecounter/purecounter_vanilla.js" %}></script>
+  <script src={% static "vendor/aos/aos.js" %}></script>
+  <script src={% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
+  <script src={% static "vendor/glightbox/js/glightbox.min.js" %}></script>
+  <script src={% static "vendor/isotope-layout/isotope.pkgd.min.js" %}></script>
+  <script src={% static "vendor/swiper/swiper-bundle.min.js" %}></script>
+  <script src={% static "vendor/php-email-form/validate.js" %} type="application/json"></script>
+
+  <!-- Template Main JS File -->
+  <script src={% static "js/main.js" %}></script>
+  <script>
+    function sendwhatsapp() {
+      var phn = "+918281179167";
+
+      var fname = document.querySelector('.fname').value;
+      var lname = document.querySelector('.lname').value;
+      var phone = document.querySelector('.phn').value;
+      var email = document.querySelector('.em').value;
+      var sub = document.querySelector('.sub').value;
+      var msg = document.querySelector('.msg').value;
+
+      var url = "https://wa.me/" + phn + "?text="
+      +"*Name :* " +fname+" "+lname+"%0a"
+      +"*Phone :* " +phone+"%0a"
+      +"*Email :* " +email+"%0a"
+      +"*Subject :* " +sub+"%0a"
+      +"    "+msg+"%0a";
+
+      window.open(url, '_blank').focus();
+      document.enquiryForm.reset();
+    }
+  </script>
+<!-- change whatsapp number to +919630030053 -->
+</body>
+
+</html>
