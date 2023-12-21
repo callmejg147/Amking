@@ -33,5 +33,6 @@ urlpatterns = [
     path('services', services_view, name='services'),
     path('testimonials/', testimonial_view , name='testimonial'),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
+urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
