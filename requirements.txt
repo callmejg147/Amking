@@ -1,5 +1,6 @@
-Flask
 Django
-psycopg2
+psycopg2-binary
 pillow
-pywhatkit
+gunicorn
+whitenoise
+django-jazzmin
