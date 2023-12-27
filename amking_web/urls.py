@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from pages.views import home_view, about_view, testimonial_view, services_view
 from amking_projects.views import project_view, project_details
@@ -36,3 +37,4 @@ urlpatterns = [
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
+urlpatterns += staticfiles_urlpatterns()
