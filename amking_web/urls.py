@@ -28,7 +28,7 @@ from gallery.views import gallery_view
 
 urlpatterns = [
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}, 'show_indexes': True),
     path('',home_view, name='home'),
     path('about_us/', about_view, name='about'),
     path('projects/', project_view, name='projects'),
