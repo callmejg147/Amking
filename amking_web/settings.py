@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('D_MODE', 'False').lower() == 'true'
+DEBUG = os.environ.get('D_MODE', 'False').lower() == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,19 +86,24 @@ WSGI_APPLICATION = 'amking_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'amking',
-        'USER': 'postgres',
-        'PASSWORD': 'Jg@dev',
-        'HOSTNAME': 'localhost',
-        'PORT': '8080',
+if not DEBUG:
+    db_url = os.environ.get('DB_URL')
+    DATABASES = {
+        'default': dj_database_url.parse(db_url)
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'amking',
+            'USER': 'postgres',
+            'PASSWORD': 'Jg@dev',
+            'HOSTNAME': 'localhost',
+            'PORT': '8080',
+        }
 }
 
-db_url = os.environ.get('DB_URL')
-DATABASES['default'] = dj_database_url.parse(db_url)
+
 
 
 # Password validation
