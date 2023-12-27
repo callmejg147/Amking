@@ -143,6 +143,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 MEDIA_URL = '/media/'
+DJANGO_MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
@@ -152,7 +153,7 @@ else:
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 # Default primary key field type
