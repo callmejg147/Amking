@@ -12,10 +12,12 @@ def home_view(request, *args, **kwargs):
     gal = Gallery.objects.all().order_by('-id')
     success = Success.objects.all()
     projects = Projects.objects.all().order_by('-id')
+    testimonials = Testimonials.objects.all()
     context = {
         'gallery': gal,
         'success': success,
         'projects': projects,
+        'testimonials': testimonials,
     }
     return render(request,'index.html', context=context)
 
