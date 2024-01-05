@@ -26,8 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
-#os.environ.get('D_MODE', 'True').lower() == 'True'
+DEBUG = os.environ.get('D_MODE', 'True').lower() == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,7 +87,7 @@ WSGI_APPLICATION = 'amking_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-'''if not DEBUG:
+if not DEBUG:
     db_url = os.environ.get('DB_URL')
     DATABASES = {
         'default': dj_database_url.parse(db_url)
@@ -103,11 +102,11 @@ else:
             'HOSTNAME': 'localhost',
             'PORT': '8080',
         }
-}'''
-db_url = os.environ.get('DB_URL')
+}
+'''db_url = os.environ.get('DB_URL')
 DATABASES = {
     'default': dj_database_url.parse(db_url)
-}
+}'''
 
 
 
@@ -150,11 +149,11 @@ STATIC_URL = "/static/"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-'''if DEBUG:
+if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')'''
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
