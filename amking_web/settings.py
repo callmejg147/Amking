@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'amking_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if not DEBUG:
+'''if not DEBUG:
     db_url = os.environ.get('DB_URL')
     DATABASES = {
         'default': dj_database_url.parse(db_url)
@@ -103,8 +103,11 @@ else:
             'HOSTNAME': 'localhost',
             'PORT': '8080',
         }
+}'''
+db_url = os.environ.get('DB_URL')
+DATABASES = {
+    'default': dj_database_url.parse(db_url)
 }
-
 
 
 
