@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # import models:
 from gallery.models import Gallery
-from pages.models import Success
+from pages.models import Success, Testimonials
 from amking_projects.models import Projects
 
 
