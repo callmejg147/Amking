@@ -90,7 +90,12 @@
             <h2>Contact</h2>
             <p>Contact Us</p>
           </div>
-  
+          {% if project.location %}
+          <div>
+            <iframe style="border:0; width: 100%; height: 270px;" src="{{ project.location }}" frameborder="0" allowfullscreen></iframe>
+
+          </div>
+          {% endif %}
           <div class="row mt-5">
   
             <div class="col-lg-4">
