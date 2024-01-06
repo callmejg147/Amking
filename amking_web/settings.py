@@ -161,9 +161,10 @@ JAZZMIN_SETTINGS = {
     'site_title': 'AMKING',
     'site_header': 'Amking Administration',
     'site_brand': 'AMKING',
-    'login_logo': None,
-    'site_logo': None,
+    'login_logo': 'Amking',
+    'site_logo': 'img/favicon.png',
     'copyright': 'Amking Builders & Developers',
+    'user_avatar': None,
 }
 
 
