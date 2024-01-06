@@ -10,7 +10,7 @@ class Projects(models.Model):
     img2 = models.ImageField(upload_to='project/images/',blank=True,null=True)
     img3 = models.ImageField(upload_to='project/images/',blank=True,null=True)
     img4 = models.ImageField(upload_to='project/images/',blank=True,null=True)
-    location = models.TextField(null=true)
+    location = models.TextField(null=True)
     objects = models.Manager()
     class Meta:
         verbose_name_plural = 'Projects'
