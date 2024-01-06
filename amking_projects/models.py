@@ -4,12 +4,13 @@ from django.db import models
 class Projects(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length = 100, null=False)
-    short_description = models.TextField(max_length=500, null=False, default='none')
+    short_description = models.TextField(max_length=500, null=True,)
     description = models.TextField(null=False)
     img1 = models.ImageField(upload_to='project/images/',blank=True,null=True)
     img2 = models.ImageField(upload_to='project/images/',blank=True,null=True)
     img3 = models.ImageField(upload_to='project/images/',blank=True,null=True)
     img4 = models.ImageField(upload_to='project/images/',blank=True,null=True)
+    location = models.TextField(null=true)
     objects = models.Manager()
     class Meta:
         verbose_name_plural = 'Projects'
