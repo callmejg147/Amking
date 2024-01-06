@@ -1,5 +1,10 @@
 from django.contrib import admin
 from .models import Success, Testimonials
 # Register your models here.
-admin.site.register(Success)
-admin.site.register(Testimonials)
+class Successadmin(admin.ModelAdmin):
+    list_display=['clients', 'projects', 'years', 'awards']
+admin.site.register(Success, Successadmin)
+
+class Testimonialadmin(admin.ModelAdmin):
+    list_display=['name', 'content', 'image']
+admin.site.register(Testimonials, Testimonialadmin)
