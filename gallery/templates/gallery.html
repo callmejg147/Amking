@@ -72,6 +72,18 @@
       {% for vid in videos %}
         <div class="col-lg-4 col-md-6 portfolio-item filter-videos">
           <div class="portfolio-wrap">
+            
+            {{ vid.video }}
+            <h4>{{ vid.title }}</h4>
+            
+          </div>    
+        </div>
+      {% endfor %}  
+
+          
+      <!--{% for vid in videos %}
+        <div class="col-lg-4 col-md-6 portfolio-item filter-videos">
+          <div class="portfolio-wrap">
             <video autoplay muted style="width:100%">
               <source src="/media/{{ vid.video }}" type="video/mp4">
             </video>
@@ -80,7 +92,7 @@
             </div></a>
           </div>
         </div>
-      {% endfor %}
+      {% endfor %}-->
 
 
       </div>
