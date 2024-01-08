@@ -19,3 +19,11 @@ class Gallery(models.Model):
     objects = models.Manager()
     class Meta:
         verbose_name_plural = 'Gallery'
+
+class GalleryVid(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100, null=False)
+    video = models.FileField(upload_to='videos/', null=True)
+    objects = models.Manager()
+    class Meta:
+        verbose_name_plural = 'Videos'
