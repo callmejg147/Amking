@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Gallery
+from .models import Category, Gallery, GalleryVid
 # Register your models here.
 class Categoryadmin(admin.ModelAdmin):
     list_display=['name']
