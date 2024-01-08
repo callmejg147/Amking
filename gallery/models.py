@@ -22,7 +22,7 @@ class Gallery(models.Model):
 
 class GalleryVid(models.Model):
     title = models.CharField(max_length=100, null=False)
-    video = models.TextField(null=True)
+    video = models.URLField(max_length=500,null=True)
     class Meta:
         verbose_name_plural = 'Videos'
 
