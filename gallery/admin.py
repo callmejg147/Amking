@@ -6,5 +6,9 @@ class Categoryadmin(admin.ModelAdmin):
 admin.site.register(Category, Categoryadmin)
 
 class Galleryadmin(admin.ModelAdmin):
-    list_display=['title', 'category', 'image']
+    list_display=['title', 'image']
 admin.site.register(Gallery, Galleryadmin)
+
+class GalleryVidadmin(admin.ModelAdmin):
+    list_display=['title', 'video']
+admin.site.register(GalleryVid)
