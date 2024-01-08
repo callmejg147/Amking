@@ -11,4 +11,4 @@ admin.site.register(Gallery, Galleryadmin)
 
 class GalleryVidadmin(admin.ModelAdmin):
     list_display=['title', 'video']
-admin.site.register(GalleryVid)
+admin.site.register(GalleryVid, GalleryVidadmin)
