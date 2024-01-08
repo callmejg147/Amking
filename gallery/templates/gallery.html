@@ -69,13 +69,14 @@
             </div>
           </div>
       {% endfor %}
+        <!-- #=== display youtube video in gallery ===# -->
       {% for vid in videos %}
         <div class="col-lg-4 col-md-6 portfolio-item filter-videos">
           <div class="portfolio-wrap">
-            
-            {{ vid.video }}
-            <h4>{{ vid.title }}</h4>
-            
+            <iframe width="560" height="315" src="{{ vid.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div><a href="{{ vid.video }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ img.title }}"><div class="portfolio-info">
+              <h4>{{ vid.title }}</h4>  
+            </div></a></div>
           </div>    
         </div>
       {% endfor %}  
