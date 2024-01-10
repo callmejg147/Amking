@@ -6,5 +6,5 @@ class Successadmin(admin.ModelAdmin):
 admin.site.register(Success, Successadmin)
 
 class Testimonialadmin(admin.ModelAdmin):
-    list_display=['name', 'content', 'image']
+    list_display=['name', 'location', 'content', 'image']
 admin.site.register(Testimonials, Testimonialadmin)
