@@ -14,6 +14,7 @@ class Success(models.Model):
 
 class Testimonials(models.Model):
     name = models.CharField(max_length=100,null=True)
+    location = models.CharField(max_length=100, null=True)
     content = models.TextField(null=True)
     image = models.ImageField(upload_to='testimonials/images/', null=True)
     objects = models.Manager()
