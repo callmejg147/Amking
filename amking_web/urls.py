@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+#from django.urls import path, re_path
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.static import serve
@@ -27,8 +27,8 @@ from gallery.views import gallery_view
 
 
 urlpatterns = [
-    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+    #re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    #re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
     path('',home_view, name='home'),
     path('about_us/', about_view, name='about'),
     path('projects/', project_view, name='projects'),
@@ -37,7 +37,6 @@ urlpatterns = [
     path('services', services_view, name='services'),
     path('testimonials/', testimonial_view , name='testimonial'),
     path('admin/', admin.site.urls),
-] 
-#urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
 #urlpatterns += staticfiles_urlpatterns()
