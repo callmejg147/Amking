@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
-import dj_database_url
+#import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#os.environ.get('D_MODE', 'True').lower() == 'True'
+DEBUG = os.environ.get('D_MODE', 'True').lower() == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -105,9 +104,13 @@ else:
         }
 }
 '''
-db_url = os.environ.get('DB_URL')
+#db_url = os.environ.get('DB_URL')
+#'default': dj_database_url.parse(db_url)
 DATABASES = {
-    'default': dj_database_url.parse(db_url)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -151,10 +154,13 @@ STATIC_URL = "/static/"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-'''if DEBUG:
+'''
+if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')'''
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+'''
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
