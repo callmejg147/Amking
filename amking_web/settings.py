@@ -164,7 +164,7 @@ else:
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 JAZZMIN_SETTINGS = {
     'site_title': 'AMKING',
